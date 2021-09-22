@@ -1,0 +1,60 @@
+.modal {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: aqua;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    /* transition: opacity .5s; */
+}
+
+.modal__show {
+    display: flex;
+    animation-name: modalIn;
+    animation-duration: .5s;
+    transform-origin: center;
+}
+
+/* .modal__enter {
+    opacity: 0.01;
+}
+  
+.modal__enter.modal__enter-active {
+    opacity: 1;
+} */
+
+/* .modal__leave {
+    opacity: 1;
+} */
+.modal__leave {
+    animation: modalOut .5s;
+    transform-origin: center;
+}
+
+/* .modal__leave.modal__leave-active {
+    opacity: 0.01;
+} */
+
+@keyframes modalIn {
+    0% {
+        opacity: 0;
+        transform: scale(0,0) translate(-50%,-50%);
+    }
+    100% {
+        transform: scale(1,1) translate(-50%,-50%);
+        opacity: 1;
+    }
+}
+
+@keyframes modalOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
